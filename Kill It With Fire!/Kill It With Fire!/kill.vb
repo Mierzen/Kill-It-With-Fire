@@ -22,7 +22,6 @@
         For Each p In System.Diagnostics.Process.GetProcesses()
             Try
                 Dim currentProcess As String = p.Modules(0).FileName
-                form_main.Label1.Text = currentProcess
 
                 For i = 0 To listProcesses.Length / 2 - 1
                     If Strings.StrComp(currentProcess, listProcesses(i, 0)) = 0 Then
@@ -63,6 +62,6 @@
             End Try
         Next
 
-        form_main.Label1.Text = ""
+        MsgBox("Done!")
     End Sub
 End Module
