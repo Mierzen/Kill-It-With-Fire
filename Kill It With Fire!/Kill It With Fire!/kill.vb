@@ -1,4 +1,6 @@
 ﻿Module kill
+    Public promptResult As String
+
     Public Sub kill()
         Dim listProcesses(,) As String = _
         { _
@@ -24,15 +26,21 @@
 
                 For i = 0 To listProcesses.Length / 2 - 1
                     If Strings.StrComp(currentProcess, listProcesses(i, 0)) = 0 Then
-                        Dim r As MsgBoxResult
-                        r = MsgBox("Are you sure you want to Kill the following process? " & vbNewLine & currentProcess, MsgBoxStyle.YesNoCancel Or MsgBoxStyle.ApplicationModal Or MsgBoxStyle.MsgBoxSetForeground)
+                        Dim str As String = "Are you sure you want to kill " & p.ProcessName & "? "
 
-                        If r = MsgBoxResult.Cancel Then
+                        If promptResult <> "YesAll" Or promptResult <> "NoAll" Then
+                            Prompt.label_procCurrent.Text = str
+                            Prompt.label_procDetails.Text = "(" & currentProcess & ")"
+                            Prompt.ShowDialog()
+                        End If
+
+                        If promptResult = "No" Then
                             Exit For
-                        ElseIf r = MsgBoxResult.Yes Then
+                        ElseIf promptResult = "NoAll" Then
+                            Exit Sub
+                        Else '"Yes" or "YesAll"
                             p.Kill()
                             p.WaitForExit() ' // possibly with a timeout
-                            MsgBox("Done")
                         End If
                     End If
                 Next
