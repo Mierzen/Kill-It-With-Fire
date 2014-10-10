@@ -7,6 +7,6 @@
     Private Sub form_main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         kill.kill()
 
-        Application.Exit()
+        form_done.ShowDialog()
     End Sub
 End Class

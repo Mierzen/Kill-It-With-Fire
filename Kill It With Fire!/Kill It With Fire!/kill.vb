@@ -1,7 +1,13 @@
 ﻿Module kill
     Public promptResult As String
+    Public killed As Integer
 
     Public Sub kill()
+        Dim table As New DataTable
+        table.Columns.Add("Process name", GetType(String))
+        table.Columns.Add("Process path", GetType(String))
+        table.Columns.Add("Status", GetType(String))
+
         Dim listProcesses(,) As String = _
         { _
         {"C:\Program Files\Cucusoft\NetGuard\SysMsgProxySrvc.sys", "Cucusoft SysMsg Proxy Service"}, _
@@ -40,6 +46,9 @@
                         Else '"Yes" or "YesAll"
                             p.Kill()
                             p.WaitForExit() ' // possibly with a timeout
+
+                            table.Rows.Add(p.ProcessName, currentProcess, "Killed")
+                            killed += 1
                         End If
                     End If
                 Next
@@ -56,12 +65,16 @@
                 '     }
                 '}
 
+            Catch w As System.ComponentModel.Win32Exception
+                'do nothing
+
             Catch e As Exception
                 Console.WriteLine("The following exception was raised: ")
                 Console.WriteLine(e.Message)
+                table.Rows.Add("name", "path", "Failed: " & e.Message)
             End Try
         Next
 
-        MsgBox("Done!")
+        form_results.DataGridView1.DataSource = table
     End Sub
 End Module

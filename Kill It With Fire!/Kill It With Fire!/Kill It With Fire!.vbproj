@@ -97,11 +97,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="form_done.Designer.vb">
+      <DependentUpon>form_done.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form_done.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="form_main.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_main.Designer.vb">
       <DependentUpon>form_main.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_results.Designer.vb">
+      <DependentUpon>form_results.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form_results.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="kill.vb" />
@@ -128,8 +140,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="form_done.resx">
+      <DependentUpon>form_done.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_main.resx">
       <DependentUpon>form_main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_results.resx">
+      <DependentUpon>form_results.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
