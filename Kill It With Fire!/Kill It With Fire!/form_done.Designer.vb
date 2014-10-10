@@ -22,6 +22,7 @@ Partial Class form_done
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(form_done))
         Me.label_done = New System.Windows.Forms.Label()
         Me.btn_exit = New System.Windows.Forms.Button()
         Me.btn_details = New System.Windows.Forms.Button()
@@ -66,6 +67,7 @@ Partial Class form_done
         Me.Controls.Add(Me.btn_details)
         Me.Controls.Add(Me.btn_exit)
         Me.Controls.Add(Me.label_done)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "form_done"
