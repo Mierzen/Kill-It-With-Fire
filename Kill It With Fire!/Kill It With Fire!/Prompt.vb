@@ -21,6 +21,6 @@
     End Sub
 
     Private Sub Prompt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        panel_buttons.Location = New Point((Me.Width - panel_buttons.Width) / 2, panel_buttons.Location.Y)
+        center(panel_buttons, Me)
     End Sub
 End Class

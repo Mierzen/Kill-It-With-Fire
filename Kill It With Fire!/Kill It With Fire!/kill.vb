@@ -77,4 +77,8 @@
 
         form_results.DataGridView1.DataSource = table
     End Sub
+
+    Public Sub center(control As Control, form As Form)
+        control.Location = New Point(Math.Round((form.Width - control.Width) / 2, 0), control.Location.Y)
+    End Sub
 End Module

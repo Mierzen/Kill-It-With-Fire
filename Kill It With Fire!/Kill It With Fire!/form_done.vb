@@ -10,7 +10,9 @@
 
     Private Sub form_done_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Beep()
-        label_done.Text = killed & " processes killed!"
-        label_done.Location = New Point((Me.Width - label_done.Width) / 2, label_done.Location.Y)
+        label_done.Text = vbNewLine & killed & " processes killed!"
+
+        center(btn_details, Me)
+        center(btn_exit, Me)
     End Sub
 End Class

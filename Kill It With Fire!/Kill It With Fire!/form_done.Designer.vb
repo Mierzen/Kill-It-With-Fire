@@ -30,17 +30,18 @@ Partial Class form_done
         '
         'label_done
         '
-        Me.label_done.AutoSize = True
+        Me.label_done.Dock = System.Windows.Forms.DockStyle.Fill
         Me.label_done.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_done.Location = New System.Drawing.Point(23, 20)
+        Me.label_done.Location = New System.Drawing.Point(0, 0)
         Me.label_done.Name = "label_done"
-        Me.label_done.Size = New System.Drawing.Size(107, 15)
+        Me.label_done.Size = New System.Drawing.Size(160, 142)
         Me.label_done.TabIndex = 0
-        Me.label_done.Text = "x processes killed!"
+        Me.label_done.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "x processes killed!"
+        Me.label_done.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'btn_exit
         '
-        Me.btn_exit.Location = New System.Drawing.Point(21, 80)
+        Me.btn_exit.Location = New System.Drawing.Point(24, 98)
         Me.btn_exit.Name = "btn_exit"
         Me.btn_exit.Size = New System.Drawing.Size(113, 23)
         Me.btn_exit.TabIndex = 1
@@ -49,7 +50,7 @@ Partial Class form_done
         '
         'btn_details
         '
-        Me.btn_details.Location = New System.Drawing.Point(21, 51)
+        Me.btn_details.Location = New System.Drawing.Point(24, 69)
         Me.btn_details.Name = "btn_details"
         Me.btn_details.Size = New System.Drawing.Size(113, 23)
         Me.btn_details.TabIndex = 2
@@ -61,9 +62,8 @@ Partial Class form_done
         Me.AcceptButton = Me.btn_exit
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.ClientSize = New System.Drawing.Size(160, 142)
         Me.Controls.Add(Me.btn_details)
         Me.Controls.Add(Me.btn_exit)
         Me.Controls.Add(Me.label_done)
@@ -71,13 +71,11 @@ Partial Class form_done
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "form_done"
-        Me.Padding = New System.Windows.Forms.Padding(20)
         Me.ShowInTaskbar = False
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "form_done"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents label_done As System.Windows.Forms.Label

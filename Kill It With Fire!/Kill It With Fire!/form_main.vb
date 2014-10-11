@@ -8,5 +8,6 @@
         kill.kill()
 
         form_done.ShowDialog()
+        Application.Exit()
     End Sub
 End Class
