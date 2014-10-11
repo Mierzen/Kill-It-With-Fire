@@ -14,5 +14,9 @@
 
         center(btn_details, Me)
         center(btn_exit, Me)
+
+        If killed <> 0 Then
+            btn_details.Enabled = True
+        End If
     End Sub
 End Class

@@ -50,6 +50,7 @@ Partial Class form_done
         '
         'btn_details
         '
+        Me.btn_details.Enabled = False
         Me.btn_details.Location = New System.Drawing.Point(24, 69)
         Me.btn_details.Name = "btn_details"
         Me.btn_details.Size = New System.Drawing.Size(113, 23)
