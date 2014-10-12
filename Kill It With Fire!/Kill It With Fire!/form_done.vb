@@ -12,9 +12,6 @@
         Beep()
         label_done.Text = vbNewLine & killed & " processes killed!"
 
-        center(btn_details, Me)
-        center(btn_exit, Me)
-
         If killed <> 0 Then
             btn_details.Enabled = True
         End If

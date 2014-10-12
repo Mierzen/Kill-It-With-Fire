@@ -41,6 +41,7 @@ Partial Class form_done
         '
         'btn_exit
         '
+        Me.btn_exit.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_exit.Location = New System.Drawing.Point(24, 98)
         Me.btn_exit.Name = "btn_exit"
         Me.btn_exit.Size = New System.Drawing.Size(113, 23)
@@ -50,6 +51,7 @@ Partial Class form_done
         '
         'btn_details
         '
+        Me.btn_details.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_details.Enabled = False
         Me.btn_details.Location = New System.Drawing.Point(24, 69)
         Me.btn_details.Name = "btn_details"
